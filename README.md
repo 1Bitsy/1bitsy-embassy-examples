@@ -11,10 +11,10 @@ examples adjusted for the [1Bitsy](https://1bitsquared.com/products/1bitsy) boar
 rustup target add thumbv7em-none-eabi
 ```
 
-- Install `probe-rs-cli` with defmt support.
+- Install `probe-rs` with defmt support.
 
 ```bash
-cargo install probe-rs-cli
+cargo install probe-rs --features=cli
 ```
 
 - Run the example
@@ -33,7 +33,6 @@ cargo run --bin blinky
 - [x] button
 - [ ] can
 - [ ] dac
-- [ ] eth
 - [ ] flash_async
 - [ ] flash
 - [x] hello
