@@ -1,6 +1,5 @@
 #![no_std]
 #![no_main]
-#![feature(type_alias_impl_trait)]
 
 use defmt::*;
 use embassy_executor::Spawner;
@@ -30,6 +29,7 @@ async fn main(_spawner: Spawner) {
         None,
         None,
         khz(10),
+        Default::default(),
     );
 
     let max = pwm.get_max_duty();

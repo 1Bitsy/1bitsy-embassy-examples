@@ -1,6 +1,5 @@
 #![no_std]
 #![no_main]
-#![feature(type_alias_impl_trait)]
 
 use defmt::*;
 use embassy_executor::Spawner;
@@ -17,7 +16,7 @@ async fn main(_spawner: Spawner) {
     info!("Hello World!");
 
     let ch1 = PwmPin::new_ch1(p.PA8, OutputType::PushPull);
-    let mut pwm = SimplePwm::new(p.TIM1, Some(ch1), None, None, None, khz(10));
+    let mut pwm = SimplePwm::new(p.TIM1, Some(ch1), None, None, None, khz(10), Default::default());
     let max = pwm.get_max_duty();
     pwm.enable(Channel::Ch1);
 
